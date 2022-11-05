@@ -8,10 +8,12 @@ import { CATEGORIES, TASKS } from "../data";
 // console.log({ CATEGORIES, TASKS });
 
 function App() {
+  const [selected, setSelected] = useState(false)
+
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter  prop={CATEGORIES}/>
+      <CategoryFilter  prop={CATEGORIES} selected={selected} setSelected={setSelected}/>
       <NewTaskForm />
       <TaskList taskData={TASKS}/>
     </div>
