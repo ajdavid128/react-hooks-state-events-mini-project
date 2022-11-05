@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Task() {
+function Task({taskProp}) {
+
+  const {text, category} = taskProp
+
+  const [show, setShow] = useState(true)
+
+  function handleDelete() {
+    setShow(!show)
+  }
+
+  const handleRender = () => {
+     show === true ?  : }
+
+  console.log(show)
+
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button onClick={handleDelete} className="delete">X</button>
     </div>
   );
 }
