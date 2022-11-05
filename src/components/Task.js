@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 
 function Task({taskProp}) {
-
   const {text, category} = taskProp
 
   const [show, setShow] = useState(true)
@@ -9,11 +8,6 @@ function Task({taskProp}) {
   function handleDelete() {
     setShow(!show)
   }
-
-  const handleRender = () => {
-     show === true ?  : }
-
-  console.log(show)
 
   return (
     <div className="task">
@@ -25,3 +19,5 @@ function Task({taskProp}) {
 }
 
 export default Task;
+
+// {show ? <div className="text">{text}</div> : null}
