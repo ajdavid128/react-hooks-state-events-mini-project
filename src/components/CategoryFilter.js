@@ -1,19 +1,20 @@
 import React, {useState} from "react";
 
-function CategoryFilter({prop, selected, setSelected}) {
-  // const [selected, setSelected] = useState(false)
+function CategoryFilter({CATEGORIES, handleSelect}) {
+  // const [selected, setSelected] = useState(false) => Moved to app to pass down to TaskList component
 
-  function handleSelect(e) {
-    setSelected(e.target.key)
-    e.target.className = selected ? "Selected" : ""
-  }
+  // consider having hanlder in App and passing down only handler function, rather than state var and setter function
+  // function handleSelect(e) { 
+  //   setSelected(e.target.key)
+  //   console.log("hiii")
+  //   e.target.className = selected ? "Selected" : ""
+  // }
 
-  const classSelected= selected ? "Selected" : ""
-  const classNotSelected = selected ? "" : "Selected"
-
-  const categoryArray = prop.map((eachCat) => {
+  const categoryArray = CATEGORIES.map((eachCat) => {
     return(
-      <button onClick={handleSelect} className={selected} key={eachCat}>{eachCat}</button>
+      <button 
+      onClick={() => handleSelect(eachCat)} 
+      key={eachCat}>{eachCat}</button>
     )
   })
 
@@ -27,3 +28,6 @@ function CategoryFilter({prop, selected, setSelected}) {
 }
 
 export default CategoryFilter;
+
+// const classSelected= selected ? "Selected" : ""
+//   const classNotSelected = selected ? "" : "Selected"
